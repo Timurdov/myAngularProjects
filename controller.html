@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>Angular_Controller</title>
+
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/bootstrap-theme.min.css">
+
+
+    <script src="//code.jquery.com/jquery-1.11.2.min.js"></script>
+    <script type="text/javascript" src="angular/angular.min.js"></script>
+    <script type="text/javascript" src="js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="js/angularController.js"></script>
+
+
+</head>
+<body>
+
+<div data-ng-app="angularController">
+
+    <div data-ng-controller="helloController">
+        <p>I want to say: <span data-ng-bind="hello"></span> </p>
+    </div>
+
+    <div data-ng-controller="MultipleOn5">
+        <p>Please, enter our value: <input type="number" data-ng-model="initValue"></p>
+        <p>The output value: <span data-ng-bind="fifth(initValue)"></span> </p>
+    </div>
+
+    <div data-ng-controller="ButtonController">
+        <button data-ng-click="beer()">BEER</button>
+        <button data-ng-click="vodka()">VODKA</button>
+        <p>The most of all, I like <span data-ng-bind="drink"></span> </p>
+    </div>
+
+
+    <div data-ng-controller="FormController as fc">
+        <h2 data-ng-bind="fc.titleText"></h2>
+        <form data-ng-submit="fc.formCont(fc.newTitleText)">
+            <input type="text" data-ng-model="fc.newTitleText"><br>
+            <button type="submit">Change the title text</button>
+        </form>
+    </div>
+
+
+</div>
+
+</body>
+</html>
