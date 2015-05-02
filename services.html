@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>Services_Angular</title>
+
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/bootstrap-theme.min.css">
+
+
+    <script src="//code.jquery.com/jquery-1.11.2.min.js"></script>
+    <script type="text/javascript" src="angular/angular.min.js"></script>
+    <script type="text/javascript" src="js/bootstrap.min.js"></script>
+    <!--<script type="text/javascript" src="js/servicesApp.js"></script>-->
+    <script type="text/javascript" src="js/serviceApp2.js"></script>
+</head>
+<body>
+
+<!--<div data-ng-app="servicesApp">-->
+
+    <!--<div data-ng-controller="MyController">-->
+        <!--<input data-ng-init = "message='test'" data-ng-model="message">-->
+        <!--<button data-ng-click="callNotify(message);">NOTIFY</button>-->
+    <!--</div>-->
+
+<!--</div>-->
+
+<div data-ng-app="serviceApp2">
+    <div data-ng-controller="ListCtrl as list">
+        <p data-ng-repeat="message in list.messages">{{ message.id }}: {{ message.text }}</p>
+    </div>
+
+    <div data-ng-controller="PostCtrl as post">
+        <form data-ng-submit="post.addMessage(post.newMessage)">
+            <input type="text" data-ng-model="post.newMessage">
+            <button type="submit">Add Message</button>
+        </form>
+    </div>
+
+</div>
+
+</body>
+</html>
