@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>Filter</title>
+    <script type="text/javascript" src="angular/angular.min.js"></script>
+    <script type="text/javascript" src="js/filter.js"></script>
+</head>
+<body>
+
+    <div data-ng-app="app" data-ng-controller="TestCtrl as test">
+
+        <input type="text" data-ng-model="search">
+        <p data-ng-repeat="person in test.people | filter: search | orderBy: '-name' | limitTo: 2 ">
+
+            {{ person.name }}
+
+        </p>
+        <p>{{ 1499999971914 | date: 'MM-dd-yyyy' }}</p>
+
+    </div>
+
+</body>
+</html>

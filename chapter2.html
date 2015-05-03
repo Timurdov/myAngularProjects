@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>CHAPTER_2</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/bootstrap-theme.min.css">
+
+    <style>
+        .my-class-true{
+            color: #4400FF;
+        }
+    </style>
+
+
+    <script src="//code.jquery.com/jquery-1.11.2.min.js"></script>
+    <script type="text/javascript" src="angular/angular.min.js"></script>
+    <script type="text/javascript" src="js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="js/chapter2.js"></script>
+
+
+</head>
+<body>
+    <div data-ng-app="chapter2">
+
+        <div ng-controller="myController">
+            <div ng-repeat="item in items">
+                <span>{{item.title}}</span>
+                <input ng-model="item.quantity">
+                <span>{{item.price | currency}}</span>
+                <span>{{item.price * item.quantity | currency}}</span>
+            </div>
+            <div>Total: {{totalCart() | currency}}</div>
+            <div>Discount: {{bill.discount | currency}}</div>
+            <div>Subtotal: {{subtotal() | currency}}</div>
+        </div>
+
+        <!--<div data-ng-controller="myController as myc">-->
+
+            <!--<h2 class="my-class-{{ myc.students.dontShow }}">Our Students:</h2>-->
+
+            <!--<div data-ng-repeat="student in myc.students.names" data-ng-show="myc.students.dontShow">-->
+                <!--<p>student's name: <span data-ng-bind="student.name"></span> student's id: <span data-ng-bind="student.id*8"></span>-->
+                    <!--<button data-ng-click="myc.students.removeName($index)">Remove</button></p>-->
+            <!--</div>-->
+
+            <!--<form data-ng-submit="myc.students.addName(myc.students.startName)">-->
+            <!--<p>Add student's name here: <input type="text" data-ng-model="myc.students.startName" ></p>-->
+                <!--<button type="reset">RESET</button>-->
+                <!--<button type="submit">SUBMIT</button>-->
+            <!--</form>-->
+
+            <!--<button data-ng-click="myc.students.toggle(myc.students.dontShow)">Hide students</button>-->
+
+        <!--</div>-->
+
+    </div>
+</body>
+</html>
